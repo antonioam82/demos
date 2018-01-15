@@ -2,7 +2,7 @@ import subprocess
 import time
 from VALID import ns, OK, OKI
 
-def orden(n):
+def orden():
     while True:
         n=input("¿Qué orden, di o id?: ")
         if n==("id") or n==("di"):
@@ -34,7 +34,7 @@ while True:
         p=("************* *")
         r=("************** ")
         rect=("---------------")
-        ORDEN=orden(input("¿Qué orden, di o id?: "))
+        ORDEN=orden()
         for i in range(0,numero):
             for i in(ORDEN):
                 print("I LOVE MOVEMENT")
@@ -60,4 +60,7 @@ while True:
     conti=ns(input("¿Dispone de más tiempo que perder?: "))
     if conti==("n"):
         break
+
+
+
 
