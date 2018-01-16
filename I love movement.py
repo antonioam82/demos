@@ -17,6 +17,7 @@ while True:
     numero=OKI(input("Inserta número: "))
     
     MODE=ns(input("¿VER DEMO?: "))
+    
     if MODE==("s"):
         a=(" **************")
         b=("* *************")
@@ -35,6 +36,7 @@ while True:
         r=("************** ")
         rect=("---------------")
         ORDEN=orden()
+        subprocess.call(["cmd.exe","/C","cls"])
         for i in range(0,numero):
             for i in(ORDEN):
                 print("I LOVE MOVEMENT")
