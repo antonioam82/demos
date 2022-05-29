@@ -2,6 +2,9 @@ import pygame
 from pygame.locals import *
 from OpenGL.GL import *
 from OpenGL.GLU import *
+import time
+
+rotate = False
 
 def verts():
     global verticies
@@ -67,6 +70,14 @@ def Triangle():
             glVertex3fv(verticies[vertex])
 
     glEnd()
+
+def rotation():
+    global rotate
+    if rotate == True:
+        rotate = False
+    else:
+        print("ndd")
+        rotate = True
     
 def main():
     global verticies
@@ -74,7 +85,7 @@ def main():
     display = (1200, 680)#(1600,900)
     pygame.display.set_mode(display, DOUBLEBUF|OPENGL)
     glClearColor(0, 0.1, 0.1, 1)
-    rotate = False
+    
 
     verts()
     gluPerspective(35, (display[0]/display[1]), 0.1, 50.0)
@@ -119,7 +130,9 @@ def main():
         if keys[pygame.K_w]:
             glTranslatef(0.0,0.1,0.0)
         if keys[pygame.K_r]:
-            rotate = True
+            #rotate = True
+            rotation()
+            time.sleep(1)
 
         if rotate:
             glRotatef(5, 0, 1, 0)
